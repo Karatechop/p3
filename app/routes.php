@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return "Index page";
+	return View::make('index');
 });
 
 Route::get('/lorem', function()
