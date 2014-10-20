@@ -16,22 +16,40 @@ Route::get('/', function()
 	return View::make('index');
 });
 
+
+
 Route::get('/lorem', function()
 {
-	return "Lorem Ipsum form";
+	return View::make('lorem')
+	-> with ('paragraphs_number', 3);
+	
 });
+
+
+
 
 Route::get('/lorem/{paragraphs_number}', function($paragraphs_number)
 {
-	return "Lorem Ipsum output. paragraphs_number equals to $paragraphs_number";
+	return View::make('lorem')-> with ('paragraphs_number', $paragraphs_number);
 }) ->where ('paragraphs_number', '[0-9]+' );
+
+
+
 
 Route::get('/users', function()
 {
-	return "Random users generation form";
+	return View::make('users')
+	-> with ('users_number', 3);
+	
 });
+
+
+
 
 Route::get('/users/{users_number}', function($users_number)
 {
-	return "Random users output. users_number equals to $users_number";
-});
+	return View::make('users')-> with ('users_number', $users_number);
+}) ->where ('users_number', '[0-9]+' );
+
+
+

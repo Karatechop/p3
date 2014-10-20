@@ -18,7 +18,7 @@
 	<div class="row">
 		<div class="col-sm-12">
           
-			<h4 class="text-success">HES CSCI E-15 Dynamic Web Aplications fall 2014 Project #2 created by Boris Rugel.</h4>
+			<h4 class="text-success">HES CSCI E-15 Dynamic Web Aplications fall 2014 Project #3 created by Boris Rugel.</h4>
 		</div>
 	</div>
          
