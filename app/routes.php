@@ -13,24 +13,39 @@
 
 Route::get('/', function()
 {
-	return View::make('index');
+	$paragraphs_number = 2;
+			$generator = new Badcow\LoremIpsum\Generator();
+$paragraphs = $generator->getParagraphs($paragraphs_number);
+	return View::make('index')
+	-> with ('paragraphs_number', 2)
+	-> with('paragraphs', $paragraphs);
 });
-
 
 
 Route::get('/lorem', function()
 {
-	return View::make('lorem')
-	-> with ('paragraphs_number', 3);
-	
-});
+		$paragraphs_number = Input::get('paragraphs_number');
+		
+		if ($paragraphs_number>0 AND $paragraphs_number<16) {
+			
+		$generator = new Badcow\LoremIpsum\Generator();
+		$paragraphs = $generator->getParagraphs($paragraphs_number);
 
+		return View::make('lorem')
+		-> with ('paragraphs_number', $paragraphs_number)
+		-> with('paragraphs', $paragraphs);
+		
+		} else {
+		
+		$paragraphs_number = 3;
+		$generator = new Badcow\LoremIpsum\Generator();
+		$paragraphs = $generator->getParagraphs($paragraphs_number);
 
-
-
-Route::get('/lorem/{paragraphs_number}', function($paragraphs_number)
-{
-	return View::make('lorem')-> with ('paragraphs_number', $paragraphs_number);
+		return View::make('lorem')
+		-> with ('paragraphs_number', $paragraphs_number)
+		-> with('paragraphs', $paragraphs);
+		}
+		
 }) ->where ('paragraphs_number', '[0-9]+' );
 
 
