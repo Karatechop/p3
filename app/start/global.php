@@ -53,7 +53,27 @@ App::error(function(Exception $exception, $code)
 
 App::missing(function($exception)
 {
-	return Response::make("Page not found", 404);
+	$paragraphs_number = 2;
+		
+		$users_number = 15;
+		$name = "checked";
+		$image = "checked";
+		$address = "checked";
+		$birthday = "checked";
+		$blurb = "checked";
+		
+		$generator = new Badcow\LoremIpsum\Generator();
+		$paragraphs = $generator->getParagraphs($paragraphs_number);
+		
+		return View::make('notfound')
+		-> with ('paragraphs_number', 2)
+		-> with('paragraphs', $paragraphs)
+		-> with ('users_number', $users_number)
+		-> with ('name', $name)
+		-> with ('image', $image)
+		-> with ('birthday', $birthday)
+		-> with ('address', $address)
+		-> with ('blurb', $blurb);
 });
 
 /*
