@@ -79,13 +79,13 @@
 		</div>
 	
 		<div class="panel-body">
-			<p>Netus cras mauris velit mollis sit et integer egestas, habitant auctor integer sem at nam massa himenaeos</p>
+			<p>While lorem ipsum text is useful for a variety of body text filler, it has its limits: when creating user profiles for site mockups, or filling in user registration databases with random data for testing, you need fake names, face photographs of the right size, and more.</p> Source: <a href="http://demosthenes.info/blog/670/The-Face-Of-Lorem-Ipsum-Profile-Generators-And-Random-User-Images"> demosthenes.info </a>
 		</div>
 	</div>
 	
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h3 class="panel-title">Generate yourself some randon user data...</h3>
+			<h3 class="panel-title">Generate yourself some random user profile data...</h3>
 		</div>
 		<div class="panel-body">
 			{{ Form::open(array('url' => '/users', 'method' => 'GET')) }}
