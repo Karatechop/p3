@@ -16,7 +16,7 @@
 	
 	<div class="panel panel-info">
 		<div class="panel-heading">
-			<h3 class="panel-title">Collect your parapraps below or generate yourself some more Lorem Ipsum...</h3>
+			<h3 class="panel-title">Collect your paragraphs below or generate yourself some more Lorem Ipsum...</h3>
 		</div>
 		
 	
@@ -24,7 +24,7 @@
 			{{ Form::open(array('url' => '/lorem', 'method' => 'GET')) }}
 			
 			<fieldset>
-				<legend>Enter number of desired Lorem Ipsum paragraphs (Min. 1, Max. 15) and click "Generate" or use two pre-generated paragraphs displayed below. In case of invalid form entry you still get three paragraphs free of charge ;)</legend>
+				<legend>Enter number of desired Lorem Ipsum paragraphs (Min. 1, Max. 15) and click "Generate". In case of invalid form entry you still get three paragraphs free of charge ;)</legend>
 					<div class="form-group">
     		
 					<div class="input-group">

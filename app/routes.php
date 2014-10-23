@@ -13,12 +13,28 @@
 
 Route::get('/', function()
 {
-	$paragraphs_number = 2;
-			$generator = new Badcow\LoremIpsum\Generator();
-$paragraphs = $generator->getParagraphs($paragraphs_number);
-	return View::make('index')
-	-> with ('paragraphs_number', 2)
-	-> with('paragraphs', $paragraphs);
+		$paragraphs_number = 2;
+		
+		$users_number = 15;
+		$name = "checked";
+		$image = "checked";
+		$address = "checked";
+		$birthday = "checked";
+		$blurb = "checked";
+		
+		$generator = new Badcow\LoremIpsum\Generator();
+		$paragraphs = $generator->getParagraphs($paragraphs_number);
+		
+		return View::make('index')
+		-> with ('paragraphs_number', 2)
+		-> with('paragraphs', $paragraphs)
+		-> with ('users_number', $users_number)
+		-> with ('name', $name)
+		-> with ('image', $image)
+		-> with ('birthday', $birthday)
+		-> with ('address', $address)
+		-> with ('blurb', $blurb);
+		
 });
 
 
@@ -53,18 +69,50 @@ Route::get('/lorem', function()
 
 Route::get('/users', function()
 {
-	return View::make('users')
-	-> with ('users_number', 3);
+		$users_number = Input::get('users_number');
+		$name = Input::get('name');
+		$image = Input::get('image');
+		$birthday = Input::get('birthday');
+		$address = Input::get('address');
+		$blurb = Input::get('blurb');
+		
+		
+		if ($users_number>0 AND $users_number<101) {
+		
+		return View::make('users')
+		-> with ('users_number', $users_number)
+		-> with ('name', $name)
+		-> with ('image', $image)
+		-> with ('birthday', $birthday)
+		-> with ('address', $address)
+		-> with ('blurb', $blurb);
+		
+		
+			} else {
+			
+		$users_number = 15;
+		$name = "checked";
+		$image = "checked";
+		$address = "checked";
+		$birthday = "checked";
+		$blurb = "checked";
+		
+			}	
+				
+		return View::make('users')
+		-> with ('users_number', $users_number)
+		-> with ('name', $name)
+		-> with ('image', $image)
+		-> with ('birthday', $birthday)
+		-> with ('address', $address)
+		-> with ('blurb', $blurb);
 	
-});
+})->where ('users_number', '[0-9]+' );;
 
 
 
 
-Route::get('/users/{users_number}', function($users_number)
-{
-	return View::make('users')-> with ('users_number', $users_number);
-}) ->where ('users_number', '[0-9]+' );
+
 
 
 
