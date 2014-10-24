@@ -1,6 +1,6 @@
 @extends('master')
 
-@stop
+
 
 @section('content')
 

@@ -6,7 +6,8 @@
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		
 	<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" />
-	@yield('javascript')
+	
+	@yield('scripts')
 	
 </head>
 
