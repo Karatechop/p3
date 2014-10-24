@@ -89,14 +89,14 @@
 
 	<div class="panel panel-default">
 	
-		<div class="panel-heading">
-			<h3 class="panel-title">Collect your random users in prefered format</h3>
-		</div>
+			<div class="panel-heading">
+				<h3 class="panel-title">Collect your random users in your prefered format</h3>
+			</div>
 			
 		<div id="tabs">
 			
 			<ul class="nav nav-tabs">
-			    <li class="active"><a href="#tabs-1">Plain data</a></li>
+			    <li><a href="#tabs-1">Plain data</a></li>
 			    <li><a href="#tabs-2">JSON</a></li>
 			    <li><a href="#tabs-3">XML</a></li>
 			</ul>
@@ -104,10 +104,7 @@
 <!--------------------------------TAB-1---------------------------------------->
 			
 			<div id="tabs-1" class="tab-content">
-	  
-				
-					
-					
+
 					<div class="panel-body">
 				
 					<?php
@@ -137,68 +134,67 @@
 								echo '<br>';
 								}
 						}
-						?>	
+					?>	
 					
 					</div>
 				
 	
 			</div>
-		
+
+<!--------------------------------TAB-2---------------------------------------->
 		
 			<div id="tabs-2" class="tab-content">
+
+				<div class="panel-body">
 				
-				
-			
-				<Adiv class="panel-body">
-				
-				<?php
-					$faker = Faker\Factory::create();
-					
-					if ($address OR $birthday OR $blurb) {
+					<?php
+						$faker = Faker\Factory::create();
 						
-						echo '[ <br><br> { <br> <br>';
-					
-						for ($i=0; $i < $users_number; $i++) {
-						
-					
-						if ($image) {
-							echo '<strong>"Image URL" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.Faker\Provider\Image::imageUrl($width = 95, $height = 115, 'people').'",'.'<br>';
-							}
-						
-							echo '<strong>"Name" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.$faker->name .'",'. '<br>';
-			
-						if($birthday) {
-							echo '<strong>"Date of Birth": </strong>&nbsp;&nbsp;&nbsp;'.'"'.Faker\Provider\DateTime::date($format = 'Y-m-d', $max = 'now') .'",'. '<br>';
-							}
+						if ($image OR $address OR $birthday OR $blurb) {
 							
-						if ($address) {
-							echo '<strong>"Address" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.$faker->address .'",'. '<br>';
-							}
-		
-			
-						if ($blurb) {
-							echo '<strong>"Profile" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.$faker->text .'"'. '<br>';
-							}
-			
+							echo '[ <br><br> { <br> <br>';
 						
+							for ($i=0; $i < $users_number; $i++) {
+							
 						
-						if ($i==($users_number-1)) {	
-							echo '<br> } <br><br>';
+							if ($image) {
+								echo '<strong>"Image URL" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.Faker\Provider\Image::imageUrl($width = 95, $height = 115, 'people').'",'.'<br>';
+								}
+							
+								echo '<strong>"Name" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.$faker->name .'",'. '<br>';
+				
+							if($birthday) {
+								echo '<strong>"Date of Birth": </strong>&nbsp;&nbsp;&nbsp;'.'"'.Faker\Provider\DateTime::date($format = 'Y-m-d', $max = 'now') .'",'. '<br>';
+								}
+								
+							if ($address) {
+								echo '<strong>"Address" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.$faker->address .'",'. '<br>';
+								}
+			
+				
+							if ($blurb) {
+								echo '<strong>"Profile" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.$faker->text .'"'. '<br>';
+								}
+				
+							
+							
+							if ($i==($users_number-1)) {	
+								echo '<br> } <br><br>';
+							} else {
+								echo '<br> }, <br><br>';	
+							};
+							
+							};
+							
+							echo ']';
+						
 						} else {
-							echo '<br> }, <br><br>';	
+							echo '[ <br> {<br>';
+							echo '<strong>"Name" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.$faker->name .'",'. '<br>';
+							echo '} <br> ]';
 						};
-						
-						};
-						
-						echo ']';
-					
-					} else {
-						echo '[ <br> {';
-						echo '<strong>"Name" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.$faker->name .'",'. '<br>';
-						echo '} <br> ]';
-					};
-						
-				?>	
+							
+					?>	
 				
 				
 				
@@ -206,10 +202,11 @@
 	
 			</div>
 		
+<!--------------------------------TAB-3---------------------------------------->	
 		
-		
-					<div id="tabs-3" class="tab-content">
-			<div class="panel-body">
+			<div id="tabs-3" class="tab-content">
+				
+				<div class="panel-body">
 				
 					<?php
 						$faker = Faker\Factory::create();
@@ -257,17 +254,17 @@
 					?>
 					&lt;/RANDOM USERS&gt;
 			
+				</div>
 			</div>
-			</div>
-		 
+<!----------------------------------------------------------------------------->		 
 			
 		</div>
 				
-		</div>
+	</div>
 	 
 	
 	 
-<!-------------------------------------------------------------------------------->	 
+<!----------------------------------------------------------------------------->	 
 	</div>
 </div>
 

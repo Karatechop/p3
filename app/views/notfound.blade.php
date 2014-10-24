@@ -163,136 +163,186 @@
 	</div>
 
 <!---------------------------TABS----------------------------------------------->
+
+	<div class="panel panel-default">
 	
-	<div id="tabs">
-		
-		<ul class="nav nav-tabs">
-		    <li class="active"><a href="#tabs-1">Plain data</a></li>
-		    <li><a href="#tabs-2">JSON</a></li>
-		    <li><a href="#tabs-3">XML</a></li>
-		</ul>
-		
-		<div id="tabs-1" class="tab-content">
-  
-			<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">... or use these 15 pre-generated random user profiles in your prefered format</h3>
+			</div>
+			
+		<div id="tabs">
+			
+			<ul class="nav nav-tabs">
+			    <li><a href="#tabs-1">Plain data</a></li>
+			    <li><a href="#tabs-2">JSON</a></li>
+			    <li><a href="#tabs-3">XML</a></li>
+			</ul>
+
+<!--------------------------------TAB-1---------------------------------------->
+			
+			<div id="tabs-1" class="tab-content">
+
+					<div class="panel-body">
 				
-				<div class="panel-heading">
-				<h3 class="panel-title">...or use these 15 pre-generated user profiles</h3>
-				</div>
-		
-				<div class="panel-body">
-			
-				<?php
-					$faker = Faker\Factory::create();
-					for ($i=0; $i < $users_number; $i++) {
-						
-						if ($image) {
-							echo '<img src="'.Faker\Provider\Image::imageUrl($width = 95, $height = 115, 'people').'" alt="Image'.$i.'"><br>';
-							}
-						
-							echo '<strong>Name: </strong>&nbsp;&nbsp;&nbsp;'.$faker->name . '<br>';
-			
-						if($birthday) {
-							echo '<strong>Date of Birth: </strong>&nbsp;&nbsp;&nbsp;'.Faker\Provider\DateTime::date($format = 'Y-m-d', $max = 'now') . '<br>';
-							}
+					<?php
+						$faker = Faker\Factory::create();
+						for ($i=0; $i < $users_number; $i++) {
 							
-						if ($address) {
-							echo '<strong>Address: </strong>&nbsp;&nbsp;&nbsp;'.$faker->address . '<br>';
-							}
+							if ($image) {
+								echo '<img src="'.Faker\Provider\Image::imageUrl($width = 95, $height = 115, 'people').'" alt="Image'.$i.'"><br>';
+								}
+							
+								echo '<strong>Name: </strong>&nbsp;&nbsp;&nbsp;'.$faker->name . '<br>';
+				
+							if($birthday) {
+								echo '<strong>Date of Birth: </strong>&nbsp;&nbsp;&nbsp;'.Faker\Provider\DateTime::date($format = 'Y-m-d', $max = 'now') . '<br>';
+								}
+								
+							if ($address) {
+								echo '<strong>Address: </strong>&nbsp;&nbsp;&nbsp;'.$faker->address . '<br>';
+								}
+			
+				
+							if ($blurb) {
+								echo '<strong>Profile: </strong>&nbsp;&nbsp;&nbsp;'.$faker->text . '<br>';
+								}
+				
+							if ($address OR $birthday OR $blurb) {
+								echo '<br>';
+								}
+						}
+					?>	
+					
+					</div>
+				
+	
+			</div>
+
+<!--------------------------------TAB-2---------------------------------------->
 		
-			
-						if ($blurb) {
-							echo '<strong>Profile: </strong>&nbsp;&nbsp;&nbsp;'.$faker->text . '<br>';
-							}
-			
+			<div id="tabs-2" class="tab-content">
+
+				<div class="panel-body">
+				
+					<?php
+						$faker = Faker\Factory::create();
+						
 						if ($address OR $birthday OR $blurb) {
-							echo '<br>';
-							}
-					}
+							
+							echo '[ <br><br> { <br> <br>';
+						
+							for ($i=0; $i < $users_number; $i++) {
+							
+						
+							if ($image) {
+								echo '<strong>"Image URL" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.Faker\Provider\Image::imageUrl($width = 95, $height = 115, 'people').'",'.'<br>';
+								}
+							
+								echo '<strong>"Name" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.$faker->name .'",'. '<br>';
+				
+							if($birthday) {
+								echo '<strong>"Date of Birth": </strong>&nbsp;&nbsp;&nbsp;'.'"'.Faker\Provider\DateTime::date($format = 'Y-m-d', $max = 'now') .'",'. '<br>';
+								}
+								
+							if ($address) {
+								echo '<strong>"Address" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.$faker->address .'",'. '<br>';
+								}
+			
+				
+							if ($blurb) {
+								echo '<strong>"Profile" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.$faker->text .'"'. '<br>';
+								}
+				
+							
+							
+							if ($i==($users_number-1)) {	
+								echo '<br> } <br><br>';
+							} else {
+								echo '<br> }, <br><br>';	
+							};
+							
+							};
+							
+							echo ']';
+						
+						} else {
+							echo '[ <br> {';
+							echo '<strong>"Name" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.$faker->name .'",'. '<br>';
+							echo '} <br> ]';
+						};
+							
 					?>	
 				
+				
+				
+				</div>
+	
+			</div>
+		
+<!--------------------------------TAB-3---------------------------------------->	
+		
+			<div id="tabs-3" class="tab-content">
+				
+				<div class="panel-body">
+				
+					<?php
+						$faker = Faker\Factory::create();
+					?>
+					
+					
+							&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+							
+							<br>
+							<br>
+							&lt;RANDOM USERS&gt;
+							<br>
+							<br>
+					
+					<?php
+							for ($i=0; $i < $users_number; $i++) {
+							
+							echo '&lt;RANDOM USER '.($i+1).'&gt; <br>';
+							
+								
+							if ($image) {
+								echo '&nbsp;&nbsp;&lt;IMAGE URL&gt;'.Faker\Provider\Image::imageUrl($width = 95, $height = 115, 'people').'&lt;/IMAGE URL&gt;<br>';
+								}
+								
+								echo '&nbsp;&nbsp;&lt;NAME&gt;'.$faker->name.'&lt;/NAME&gt;<br>';
+				
+							if($birthday) {
+								echo '&nbsp;&nbsp;&lt;BIRTH DATE&gt;'.Faker\Provider\DateTime::date($format = 'Y-m-d', $max = 'now') .'&lt;/BIRTH DATE&gt;<br>';
+								}
+								
+							if ($address) {
+								echo '&nbsp;&nbsp;&lt;ADDRESS&gt;'.$faker->address .'&lt;/ADDRESS&gt;<br>';
+								}
+			
+				
+							if ($blurb) {
+								echo '&nbsp;&nbsp;&lt;PROFILE&gt;'.$faker->text .'&lt;/PROFILE&gt;<br>';
+								}
+							
+							
+								
+							echo '&lt;/RANDOM USER '.($i+1).'&gt; <br><br>';
+							};
+						
+					?>
+					&lt;/RANDOM USERS&gt;
+			
 				</div>
 			</div>
-
+<!----------------------------------------------------------------------------->		 
+			
 		</div>
-	
-	
-		<div id="tabs-2" class="tab-content">
-			
-			<div class="panel panel-default">
-		
-			<div class="panel-heading">
-			<h3 class="panel-title">...or use these 15 pre-generated user profiles</h3>
-			</div>
-		
-			<div class="panel-body">
-			
-			<?php
-				$faker = Faker\Factory::create();
 				
-				if ($address OR $birthday OR $blurb) {
-					
-					echo '[ <br><br> { <br> <br>';
-				
-					for ($i=0; $i < $users_number; $i++) {
-					
-				
-					if ($image) {
-						echo '<strong>"Image URL" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.Faker\Provider\Image::imageUrl($width = 95, $height = 115, 'people').'",'.'<br>';
-						}
-					
-						echo '<strong>"Name" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.$faker->name .'",'. '<br>';
-		
-					if($birthday) {
-						echo '<strong>"Date of Birth": </strong>&nbsp;&nbsp;&nbsp;'.'"'.Faker\Provider\DateTime::date($format = 'Y-m-d', $max = 'now') .'",'. '<br>';
-						}
-						
-					if ($address) {
-						echo '<strong>"Address" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.$faker->address .'",'. '<br>';
-						}
-	
-		
-					if ($blurb) {
-						echo '<strong>"Profile" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.$faker->text .'"'. '<br>';
-						}
-		
-					
-					
-					if ($i==($users_number-1)) {	
-						echo '<br> } <br><br>';
-					} else {
-						echo '<br> }, <br><br>';	
-					};
-					
-					};
-					
-					echo ']';
-				
-				} else {
-					echo '[ <br> {';
-					echo '<strong>"Name" : </strong>&nbsp;&nbsp;&nbsp;'.'"'.$faker->name .'",'. '<br>';
-					echo '} <br> ]';
-				};
-					
-			?>	
-			
-			</div>
-			
-			</div>
-
-		</div>
-	
-	
-	
-		<div id="tabs-3" class="tab-content">
-		<p>AAAAAAA tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
-		</div>
+	</div>
 	 
 	
 	 
-<!-------------------------------------------------------------------------------->	 
+<!----------------------------------------------------------------------------->	 
 	</div>
 </div>
-
 
 @stop

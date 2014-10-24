@@ -16,7 +16,7 @@
 	
 	<div class="panel panel-info">
 		<div class="panel-heading">
-			<h3 class="panel-title">Collect your paragraphs below or generate yourself some more Lorem Ipsum...</h3>
+			<h3 class="panel-title">Collect your paragraphs below or generate yourself some Lorem Ipsum...</h3>
 		</div>
 		
 	
@@ -29,7 +29,7 @@
     		
 					<div class="input-group">
 					
-					{{ Form::text('paragraphs_number', '', array('class'=>'form control input-lg col-lg-3'))}}
+					{{ Form::number('paragraphs_number', '', array('class'=>'form control input-lg col-lg-3'))}}
 
 					{{ Form::submit('Generate', array('class'=>'btn btn-primary btn-lg')) }}
 
