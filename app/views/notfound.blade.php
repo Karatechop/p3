@@ -23,7 +23,8 @@
   
  
 	<p><a href="#text" class="btn btn-warning btn-lg">Generate text</a>
-	<a href="#users" class="btn btn-danger btn-lg">Generate users</a></p>
+	<a href="#users" class="btn btn-danger btn-lg">Generate users</a>
+	<a href="/" class="btn btn-success btn-lg">Go home</a></p>
 
 </div>
 
@@ -31,7 +32,7 @@
 <div class="row">
 	<div class="col-sm-12">
 
-<!------------------------------LOREM-IPSUM------------------------------------->
+<!--LOREM-IPSUM-->
 		
 	<div class="panel panel-info">
 		<div class="panel-heading">
@@ -43,7 +44,7 @@
 		</div>
 	</div>
 
-<!------------------------------PARAGRAPHS-FORM--------------------------------->
+<!--PARAGRAPHS-FORM-->
 	
 	<div class="panel panel-default">
 		<div class="panel-heading">
@@ -70,7 +71,7 @@
 		</div>
 	</div>
 
-<!-----------------------------PREGEN.-PRAGRAPHS------------------------------->
+<!--PREGEN.-PRAGRAPHS-->
 	
 	<div class="panel panel-default">
 		<div class="panel-heading">
@@ -89,7 +90,7 @@
 		</div>
 	</div>
 
-<!------------------------------RU---------------------------------------------->
+<!--RU-->
 	
 	<div id="users" class="panel panel-info">
 		<div class="panel-heading">
@@ -101,7 +102,7 @@
 		</div>
 	</div>
 
-<!--------------------------RU-FORM--------------------------------------------->	
+<!--RU-FORM-->	
 
 	<div class="panel panel-default">
 		<div class="panel-heading">
@@ -162,7 +163,7 @@
 		</div>
 	</div>
 
-<!---------------------------TABS----------------------------------------------->
+<!--TABS-->
 
 	<div class="panel panel-default">
 	
@@ -178,7 +179,7 @@
 			    <li><a href="#tabs-3">XML</a></li>
 			</ul>
 
-<!--------------------------------TAB-1---------------------------------------->
+<!--TAB-1-->
 			
 			<div id="tabs-1" class="tab-content">
 
@@ -218,7 +219,7 @@
 	
 			</div>
 
-<!--------------------------------TAB-2---------------------------------------->
+<!--TAB-2-->
 		
 			<div id="tabs-2" class="tab-content">
 
@@ -279,7 +280,7 @@
 	
 			</div>
 		
-<!--------------------------------TAB-3---------------------------------------->	
+<!--TAB-3-->	
 		
 			<div id="tabs-3" class="tab-content">
 				
@@ -333,7 +334,7 @@
 			
 				</div>
 			</div>
-<!----------------------------------------------------------------------------->		 
+<!-- END OF TABS-->		 
 			
 		</div>
 				
@@ -341,7 +342,7 @@
 	 
 	
 	 
-<!----------------------------------------------------------------------------->	 
+<!-- close row -->	 
 	</div>
 </div>
 
