@@ -8,13 +8,10 @@ This application helps you generate "Lorem Ipsum" dummy text and random users' p
 E-15 P2 project.
 
 ## Demo
-
+http://screencast.com/t/uIU559RJ7bq
 
 ## Details for teaching team
 No login required.
-
-
-## Commits after deadline
 
 
 ## Outside code
